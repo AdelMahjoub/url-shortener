@@ -1,7 +1,6 @@
 const express = require('express');
 const validator = require('validator');
 const shortid = require('shortid');
-const URL = require('url');
 const router = express.Router();
 const mysql = require('mysql');
 
@@ -58,12 +57,11 @@ router.get('/', function(req, res, next) {
               // database already contains the query url
               result = {
                 url: results[0].url,
-                short_url: results[0].shortUrl,
-                status: 200
+                short_url: results[0].shortUrl
               }
               connection.release();
               // Return the short url
-              return res.status(200).json(result);
+              return res.json(result);
             } else {
               // Data base does not contain the query url
               // Prepare to insert the query url
@@ -80,10 +78,9 @@ router.get('/', function(req, res, next) {
                 } else {
                   connection.release();
                   // Send the short url
-                  return res.status(200).json({
+                  return res.json({
                     url: url,
                     short_url: shortUrl,
-                    status: 200
                   });
                 }
               });
@@ -126,7 +123,7 @@ router.get(/^\/[\w-]{7,14}$/, function(req, res, next) {
             // Redirect to the original url
             return res.redirect(url);
           } else {
-            // Redirect to home page
+            // Short url does not exist, Redirect to home page
             connection.release();
             return res.redirect('/');
           }

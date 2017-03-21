@@ -1,5 +1,31 @@
 <% include ./partials/header %>
+
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Adel Mahjoub</a>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="#">Github</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1><strong>Url Shortener</strong></h1>
+</div>
+
 <div class="row">
-  <h1>Landing Page</h1>
+  <div class="col-md-12 col-xs-12">
+    <h2 class="text-primary">API usage</h2>
+    <h3>Request</h3>
+    <p><code>https://s-urls.herokuapp.com?<strong>query string</strong></code></p>
+    <p>Where <code><strong>query string</strong></code> is in this format => <code><strong>?url=[url you want to shorten]</strong></code></p>
+    <p>Exemple:</p>
+    <p><code><strong>https://s-urls.herokuapp.com/?url=https://google.com</strong></code></p>
+    <h3>Response</h3>
+
+  </div>
 </div>
 <% include ./partials/footer %>
