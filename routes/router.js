@@ -39,7 +39,6 @@ router.get('/', function(req, res, next) {
   } else {
     let url = req.query.url;
     let validationOption = { require_protocol:true };
-    let port = (router.get('env') === 'production') ? '' : 3000;
     // Check if querystring url is a valid url
     if(validator.isURL(url, validationOption)) {
       // Connect to database
@@ -69,7 +68,7 @@ router.get('/', function(req, res, next) {
               // Data base does not contain the query url
               // Prepare to insert the query url
               let id = shortid.generate();
-              let shortUrl = `${req.protocol}://${req.hostname}:${port}/${id}`;
+              let shortUrl = `${req.protocol}://${req.hostname}/${id}`;
               // Insert the new url
               connection.query(`INSERT INTO Urls (id, shortUrl, url) VALUES ('${id}', '${shortUrl}', '${url}')`, function(err, results, fields) {
                 // Internal error handler
