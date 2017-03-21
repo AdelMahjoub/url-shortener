@@ -1,16 +1,6 @@
 <% include ./partials/header %>
 
-
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Adel Mahjoub</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a href="#">Github</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<% include ./partials/navbar %>
 
 <div class="page-header">
   <h1><strong>Url Shortener</strong></h1>
@@ -22,10 +12,17 @@
     <h3>Request</h3>
     <p><code>https://s-urls.herokuapp.com?<strong>query string</strong></code></p>
     <p>Where <code><strong>query string</strong></code> is in this format => <code><strong>?url=[url you want to shorten]</strong></code></p>
+    <p>The Url you want to shorten must contain the protocol.</p>
     <p>Exemple:</p>
     <p><code><strong>https://s-urls.herokuapp.com/?url=https://google.com</strong></code></p>
     <h3>Response</h3>
-
+    <p>If the query contains a valid url, you'll get a response in this format</p>
+    <pre>
+    {
+      "url": "https://google.com",
+      "short_url": "http://s-urls.herokuapp.com/rJtzcNRix"
+    }
+    </pre>
   </div>
 </div>
 <% include ./partials/footer %>
