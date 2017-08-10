@@ -21,7 +21,7 @@
     "express-minify": "0.2.0",
     "forever": "0.15.3",
     "helmet": "3.5.0",
-    "mysql": "2.13.0",
+    "mysql": "2.14.0",
     "shortid": "2.2.8",
     "validator": "7.0.0"
   }
