@@ -15,12 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "compression": "1.7.0",
+    "compression": "1.7.1",
     "ejs": "2.5.6",
-    "express": "4.15.2",
+    "express": "4.15.5",
     "express-minify": "0.2.0",
     "forever": "0.15.3",
-    "helmet": "3.5.0",
+    "helmet": "3.8.2",
     "mysql": "2.13.0",
     "shortid": "2.2.8",
     "validator": "7.0.0"
