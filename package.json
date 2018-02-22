@@ -23,6 +23,6 @@
     "helmet": "3.8.2",
     "mysql": "2.13.0",
     "shortid": "2.2.8",
-    "validator": "7.0.0"
+    "validator": "9.4.1"
   }
 }
